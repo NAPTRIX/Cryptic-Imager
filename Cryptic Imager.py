@@ -5,13 +5,14 @@ import base64
 
 def encrypt(text, s):
     result = ""
-    for i in range(len(text)):
-        char = text[i]
-        if char.isupper():
-            result += chr((ord(char) + s - 65) % 26 + 65)
+    for char in text:
+        # Handle only visible ASCII characters (from 32 to 126)
+        if 32 <= ord(char) <= 126:
+            result += chr((ord(char) + s - 32) % 95 + 32)
         else:
-            result += chr((ord(char) + s - 97) % 26 + 97)
+            result += char  # Leave non-ASCII characters unchanged
     return result
+
 
 def hide_message_in_image(image_path, secret_message, output_image):
     # Encode the secret message in the image using steganography
