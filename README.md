@@ -27,7 +27,7 @@ An imgbb API key is required for the image upload process. You can obtain a free
 ## Usage
 
 ### Encryption Script
-
+Just run the encryption script, and it will prompt you for the necessary inputs.
 Set the following parameters at the beginning of the script:
 
 - **text**: The sensitive information (e.g., password) to encrypt.
