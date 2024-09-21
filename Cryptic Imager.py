@@ -44,8 +44,8 @@ def upload_image_to_imgbb(image_path, api_key):
         raise Exception(f"Error uploading image: {response_data}")
 
 # Encrypt password
-text = "mypassword"
-shift = 4
+text = input("Text you would like to encrypt: ")
+shift = int(input("Pick a shift value: "))
 encrypted_password = encrypt(text, shift)
 
 # Use steganography to hide the encrypted password in an image
